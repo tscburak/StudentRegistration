@@ -370,15 +370,14 @@ public class JFrame extends javax.swing.JFrame {
 		lblskdarniversitesiniNereden.setBounds(156, 385, 289, 31);
 		lblskdarniversitesiniNereden.setFont(new Font("Arial", Font.BOLD, 16));
 		
+		// Create Update Button
 		JButton btnUpdate = new JButton("G\u00FCncelle");
 		btnUpdate.setBounds(537, 578, 89, 23);
 		btnUpdate.setEnabled(false);
 		btnUpdate.addActionListener(new ActionListener() {
+			
+			// Update Function
 			public void actionPerformed(ActionEvent e) {
-				
-				
-
-				
 				
 				try {
 					StudentService studentManager = new StudentManager();
@@ -407,7 +406,7 @@ public class JFrame extends javax.swing.JFrame {
 					
 				} catch (Exception e2) {
 					System.out.println(e2.getMessage());
-					JOptionPane.showMessageDialog(null,"Seçili Öðrenci Yok.");
+					JOptionPane.showMessageDialog(null,"SeÃ§ili Ã–Ã°renci Yok.");
 					btnUpdate.setEnabled(false);
 					
 					textName.setText(null);
@@ -447,10 +446,11 @@ public class JFrame extends javax.swing.JFrame {
 		
 		
 		
-		
+		//Create Save Button
 		JButton btnKaydet = new JButton("Kaydet");
 		btnKaydet.setBounds(680, 578, 89, 23);
 		btnKaydet.addMouseListener(new MouseAdapter() {
+			//Save Function
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
@@ -459,9 +459,7 @@ public class JFrame extends javax.swing.JFrame {
 				WhereManager whereManager = new WhereManager(chckbox3, chckbox4, chckbox5, chckbox6, chckbox7, chckbox8, chckbox9, chckbox10, chckbox11, chckbox12, chckbox13, chckbox14);
 				
 					try {				
-						
-//						Student student = new Student(textName.getText(),textSurname.getText(),textPhone.getText(),textMail.getText(),textDeparments.getText(),comboBox_1.getSelectedItem().toString(),Double.parseDouble(textScore.getText()),textProprioraty.getText(),textHighschool.getText(),educationTypeManager.whichOne(chckbox1, chckbox2),whereManager.whereYouHearFrom(chckbox3, chckbox4, chckbox5, chckbox6, chckbox7, chckbox8, chckbox9, chckbox10, chckbox11, chckbox12, chckbox13, chckbox14)+textField_8.getText(),comboBox.getSelectedItem().toString(),null);
-						
+												
 						student.setName(textName.getText());
 						student.setSurname(textSurname.getText());
 						student.setPhone_number(textPhone.getText());
@@ -487,7 +485,7 @@ public class JFrame extends javax.swing.JFrame {
 						lblCurrentUpdateId.setVisible(false);
 					}
 					catch(java.lang.NumberFormatException error) {
-						JOptionPane.showMessageDialog(null, "Puan Sekmesine Sayýsal Deðer Yazdýðýnýzdan Emin Olunuz!");
+						JOptionPane.showMessageDialog(null, "Puan Sekmesine SayÃ½sal DeÃ°er YazdÃ½Ã°Ã½nÃ½zdan Emin Olunuz!");
 						System.out.println(error.getMessage());
 						
 					}
@@ -508,13 +506,14 @@ public class JFrame extends javax.swing.JFrame {
 		
 		
 		
-		
+		//Create Reset Button
 		JButton btnSfrla = new JButton("S\u0131f\u0131rla");
 		btnSfrla.setBounds(402, 578, 89, 23);
 		btnSfrla.addMouseListener(new MouseAdapter() {
+			//Reset Function
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int reply = JOptionPane.showConfirmDialog(null, "Sýfýrlamak Ýstediðinize Emin Misiniz?", "Sýfýrla?",  JOptionPane.YES_NO_OPTION);
+				int reply = JOptionPane.showConfirmDialog(null, "SÃ½fÃ½rlamak ÃstediÃ°inize Emin Misiniz?", "SÃ½fÃ½rla?",  JOptionPane.YES_NO_OPTION);
 				if (reply == JOptionPane.YES_OPTION)
 				{
 					textName.setText(null);
@@ -608,7 +607,6 @@ public class JFrame extends javax.swing.JFrame {
 	
 		
 		
-//		switchPanel(panelkayit,layeredPane);
 		
 		
 		JLabel labeltoday = new JLabel("0");
@@ -640,12 +638,13 @@ public class JFrame extends javax.swing.JFrame {
 		
 		
 		
-		
+		//Create Delete Button
 		JButton btnNewButton_2_1 = new JButton("Sil");
 		btnNewButton_2_1.addActionListener(new ActionListener() {
+			
+			//Delete Function
 			public void actionPerformed(ActionEvent e) {
-				
-				
+
 				try {
 					
 					
@@ -671,7 +670,7 @@ public class JFrame extends javax.swing.JFrame {
 					
 					System.out.println(value[0]);
 					
-					int reply = JOptionPane.showConfirmDialog(null, "Silmek Ýstediðinize Emin Misiniz?", "Sil?",  JOptionPane.YES_NO_OPTION);
+					int reply = JOptionPane.showConfirmDialog(null, "Silmek ÃstediÃ°inize Emin Misiniz?", "Sil?",  JOptionPane.YES_NO_OPTION);
 					if (reply == JOptionPane.YES_OPTION)		
 					{	
 					studentManager.deleteStudent(value,table);
@@ -680,10 +679,10 @@ public class JFrame extends javax.swing.JFrame {
 					studentManager.getAllStudent(table, labeltablo,labeltoday);
 					
 					if(row.length==1) {
-						JOptionPane.showMessageDialog(null, "Seçili Öðrenci Silindi!");
+						JOptionPane.showMessageDialog(null, "SeÃ§ili Ã–Ã°renci Silindi!");
 					}
 					else if(row.length>1) {
-						JOptionPane.showMessageDialog(null, "Seçili Öðrenciler Silindi!");
+						JOptionPane.showMessageDialog(null, "SeÃ§ili Ã–Ã°renciler Silindi!");
 					}
 					
 					
@@ -692,7 +691,7 @@ public class JFrame extends javax.swing.JFrame {
 				}
 				
 				catch(java.lang.ArrayIndexOutOfBoundsException error) {
-					JOptionPane.showMessageDialog(null, "Seçili Öðrenci Yok.");
+					JOptionPane.showMessageDialog(null, "SeÃ§ili Ã–Ã°renci Yok.");
 				}
 				
 				
@@ -704,9 +703,10 @@ public class JFrame extends javax.swing.JFrame {
 		btnNewButton_2_1.setBounds(931, 558, 89, 23);
 		panelogrenciler.add(btnNewButton_2_1);
 		
-		
+		//Create Edit Button
 		JButton btnNewButton_2_1_1 = new JButton("D\u00FCzenle");
 		btnNewButton_2_1_1.addActionListener(new ActionListener() {
+			//Edit Function
 			public void actionPerformed(ActionEvent e) {
 				DefaultTableModel model = (DefaultTableModel)table.getModel();
 				
@@ -763,7 +763,7 @@ public class JFrame extends javax.swing.JFrame {
 					
 					
 					switch(model.getValueAt(row, 9).toString()){
-						case "12. Sýnýf":
+						case "12. SÃ½nÃ½f":
 							chckbox1.setSelected(true);
 							chckbox2.setSelected(false);
 							break;
@@ -779,19 +779,19 @@ public class JFrame extends javax.swing.JFrame {
 					for(int i = 0 ; i < neredenArr.length ; i++) {
 						
 						switch(neredenArr[i]) {
-						case"Gazete-Dergi Ýlaný":
+						case"Gazete-Dergi ÃlanÃ½":
 							chckbox3.setSelected(true);
 							break;
 						case"Televizyon":
 							chckbox4.setSelected(true);
 							break;
-						case"Ýnternet":
+						case"Ãnternet":
 							chckbox5.setSelected(true);
 							break;
 						case"Okul":
 							chckbox6.setSelected(true);
 							break;
-						case"Yakýn Çevre":
+						case"YakÃ½n Ã‡evre":
 							chckbox7.setSelected(true);
 							break;
 						case"Panel ve Seminerler":
@@ -800,13 +800,13 @@ public class JFrame extends javax.swing.JFrame {
 						case"Billboard":
 							chckbox9.setSelected(true);
 							break;
-						case"ÜÜ Web Sayfasý":
+						case"ÃœÃœ Web SayfasÃ½":
 							chckbox10.setSelected(true);
 							break;
-						case"ÖSYM Kýlavuzu":
+						case"Ã–SYM KÃ½lavuzu":
 							chckbox11.setSelected(true);
 							break;
-						case"Eðitim Fuarlarý":
+						case"EÃ°itim FuarlarÃ½":
 							chckbox12.setSelected(true);
 							break;
 						case"Sosyal Medya":
@@ -854,7 +854,7 @@ public class JFrame extends javax.swing.JFrame {
 					
 				}
 				catch(java.lang.ArrayIndexOutOfBoundsException error) {
-					JOptionPane.showMessageDialog(null, "Seçili Öðrenci Yok.");
+					JOptionPane.showMessageDialog(null, "SeÃ§ili Ã–Ã°renci Yok.");
 				}
 				
 				
@@ -960,9 +960,10 @@ public class JFrame extends javax.swing.JFrame {
 		chckbxKaytTarihi.setBounds(259, 115, 126, 23);
 		panelAra.add(chckbxKaytTarihi);
 		
-		
+		//Create Search Button
 		JButton btnNewButton = new JButton("Ara");
 		btnNewButton.addActionListener(new ActionListener() {
+			//Search Function
 			public void actionPerformed(ActionEvent e) {
 				
 				
@@ -1035,9 +1036,11 @@ public class JFrame extends javax.swing.JFrame {
 		btnNewButton_1_2.setBounds(176, 0, 89, 23);
 		panel_2.add(btnNewButton_1_2);
 		
+		//Create Reset Button
 		JButton btnNewButton_2 = new JButton("Yenile");
 		btnNewButton_2.setBounds(815, 558, 89, 23);
 		btnNewButton_2.addActionListener(new ActionListener() {
+			//Reset Function
 			public void actionPerformed(ActionEvent e) {
 				
 				
@@ -1068,13 +1071,13 @@ public class JFrame extends javax.swing.JFrame {
 		panelogrenciler.add(scrollPane);
 		panelogrenciler.add(btnNewButton_2);
 		
-		
+		//Create a label and insert an icon that means "help"
 		JLabel lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setBounds(new Rectangle(100, 0, 0, 0));
 		lblNewLabel_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(null, "Arama yapmak istediðinizde: hangi sütunlarda arama yapmak istiyorsanýz\n ilgili kutucuklarý iþaretleyip, anahtar kelimenizi aratabilirsiniz. ","Bilgi",JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Arama yapmak istediÃ°inizde: hangi sÃ¼tunlarda arama yapmak istiyorsanÃ½z\n ilgili kutucuklarÃ½ iÃ¾aretleyip, anahtar kelimenizi aratabilirsiniz. ","Bilgi",JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		lblNewLabel_3.setBounds(598, 451, 20, 23);
