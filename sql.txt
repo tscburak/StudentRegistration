@@ -1,0 +1,23 @@
+CREATE TABLE public.candidate_student
+(
+    id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 9999999 CACHE 1 ),
+    phone_number character varying(11) COLLATE pg_catalog."default",
+    name character varying COLLATE pg_catalog."default",
+    surname character varying COLLATE pg_catalog."default",
+    email character varying COLLATE pg_catalog."default",
+    departments character varying COLLATE pg_catalog."default",
+    score_type character varying COLLATE pg_catalog."default",
+    score double precision,
+    highschool character varying COLLATE pg_catalog."default",
+    education_situation character varying COLLATE pg_catalog."default",
+    nereden character varying COLLATE pg_catalog."default",
+    location character varying COLLATE pg_catalog."default",
+    save character varying COLLATE pg_catalog."default",
+    placement_priority character varying COLLATE pg_catalog."default",
+    CONSTRAINT candidate_student_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.candidate_student
+    OWNER to postgres;
