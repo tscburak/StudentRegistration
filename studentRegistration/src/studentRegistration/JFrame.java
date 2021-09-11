@@ -1082,10 +1082,13 @@ public class JFrame extends javax.swing.JFrame {
 		});
 		lblNewLabel_3.setBounds(598, 451, 20, 23);
 		panelogrenciler.add(lblNewLabel_3);
+		//insert an icon that means "help"
 		lblNewLabel_3.setIcon(new ImageIcon(JFrame.class.getResource("/images/help3.png")));
 		
+		//Create Export Button
 		JButton btnNewButton_2_1_1_1 = new JButton("D\u0131\u015Fa Aktar\r\n");
 		btnNewButton_2_1_1_1.addMouseListener(new MouseAdapter() {
+			//Export Function
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
