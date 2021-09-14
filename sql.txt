@@ -1,6 +1,6 @@
 CREATE TABLE public.candidate_student
 (
-    id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 9999999 CACHE 1 ),
+    id integer NOT NULL GENERATED DEFAULT AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 9999999 CACHE 1 ),
     phone_number character varying(11) COLLATE pg_catalog."default",
     name character varying COLLATE pg_catalog."default",
     surname character varying COLLATE pg_catalog."default",
